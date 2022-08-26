@@ -58,7 +58,7 @@
       import { VRButton } from './VRButton.js';
 
       const GRID_WIDTH = 50;
-      const POINT_SIZE = .07;
+      const POINT_SIZE = .0007;
       const SEPARATION = 1000 / GRID_WIDTH,
         AMOUNTX = GRID_WIDTH,
         AMOUNTY = GRID_WIDTH,
@@ -90,10 +90,10 @@
         document.body.appendChild(container);
 
         camera = new THREE.PerspectiveCamera(
-          75,
+          5,
           window.innerWidth / window.innerHeight,
           1,
-          10000
+          100
         );
         camera.position.z = 10;
 
@@ -113,9 +113,9 @@
           for (let iy = 0; iy < AMOUNTY; iy++) {
             for (let iz = 0; iz < AMOUNTZ; iz++) {
               if (crystalCondition(ix, iy, iz)) {
-                positions[i] = (ix * SEPARATION - (AMOUNTX * SEPARATION) / 2) * 0.01; // x
-                positions[i + 1] = (iy * SEPARATION - (AMOUNTY * SEPARATION) / 2) * 0.01; // y
-                positions[i + 2] = (iz * SEPARATION - (AMOUNTZ * SEPARATION) / 2) * 0.01; // z
+                positions[i] = (ix * SEPARATION - (AMOUNTX * SEPARATION) / 2) * 0.0001; // x
+                positions[i + 1] = (iy * SEPARATION - (AMOUNTY * SEPARATION) / 2) * 0.0001; // y
+                positions[i + 2] = (iz * SEPARATION - (AMOUNTZ * SEPARATION) / 2) * 0.0001; // z
 
                 scales[j] = POINT_SIZE;
 
